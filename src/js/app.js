@@ -22,6 +22,79 @@ import "../style/index.css";
         city: null
     }
  */
+
+function name(variables) {
+  if (variables.name == null) {
+    return "your name";
+  } else {
+    return variables.name;
+  }
+}
+
+function lastname(variables) {
+  if (variables.lastname == null) {
+    return "your last name";
+  } else {
+    return variables.lastname;
+  }
+}
+
+function twitter(variables) {
+  if (variables.twitter == null) {
+    return "";
+  } else {
+    return variables.twitter;
+  }
+}
+
+function github(variables) {
+  if (variables.github == null) {
+    return "";
+  } else {
+    return variables.github;
+  }
+}
+
+function linkedin(variables) {
+  if (variables.linkedin == null) {
+    return "";
+  } else {
+    return variables.linkedin;
+  }
+}
+
+function instagram(variables) {
+  if (variables.instagram == null) {
+    return "";
+  } else {
+    return variables.instagram;
+  }
+}
+
+function role(variables) {
+  if (variables.role == null) {
+    return "your role";
+  } else {
+    return variables.role;
+  }
+}
+
+function city(variables) {
+  if (variables.city == null) {
+    return "your city";
+  } else {
+    return variables.city;
+  }
+}
+
+function country(variables) {
+  if (variables.country == null) {
+    return "your country";
+  } else {
+    return variables.country;
+  }
+}
+
 function render(variables = {}) {
   console.log("These are the current variables: ", variables); //print on the console
   // here we ask the logical questions to make decisions on how to build the html
@@ -33,14 +106,22 @@ function render(variables = {}) {
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
-          <ul class="position-right">
-            <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/4geeksacademy"><i class="fab fa-instagram"></i></a></li>
+          <h1>${name(variables)} ${lastname(variables)}</h1>
+          <h2>${role(variables)}</h2>
+          <h3>${city(variables)}, ${country(variables)}</h3>
+          <ul class="${variables.socialMediaPosition}">
+            <li><a href="https://twitter.com/${twitter(
+              variables
+            )}"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://github.com/${github(
+              variables
+            )}"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://linkedin.com/${linkedin(
+              variables
+            )}"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://instagram.com/${instagram(
+              variables
+            )}"><i class="fab fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
